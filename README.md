@@ -45,7 +45,7 @@ But if you care about you code being clean and follow single responsibility prin
      @users = UserSorting.sort(User, params[:sort]).page(params[:page])
     end
     ```
-    Possible values of `sort` param: `'id_asc', 'created_at_desc', 'relation.column_asc', 'named_order_asc'`
+    Example values of `sort` param: `'id_asc', 'created_at_desc', 'relation.column_asc', 'named_order_asc', 'column_desc'`, etc.
 
 You can also define basic sorting class if you don't want to create it for each model:
 
