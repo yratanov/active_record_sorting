@@ -60,7 +60,7 @@ end
 Usage: 
 
 ```ruby
-Sorting.sort(User, params[:sort]).page(params[:page])
+Sorting.sort(User, params[:sort])
 
 ```
 
