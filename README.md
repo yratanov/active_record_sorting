@@ -26,25 +26,26 @@ But if you care about you code being clean and follow single responsibility prin
 ## Usage
 
 1. Create sorting class:
-```ruby
-# app/sortings
-require 'active_record_sorting/base'
- 
-class UserSorting < ActiveRecordSorting::Base
-  named_sorting_orders :full_name
-
-  def full_name(order)
-    scope.order(first_name: order, last_name: order)
-  end   
-end
+    ```ruby
+    # app/sortings
+    require 'active_record_sorting/base'
+     
+    class UserSorting < ActiveRecordSorting::Base
+      named_sorting_orders :full_name
+    
+      def full_name(order)
+        scope.order(first_name: order, last_name: order)
+      end   
+    end
 ```
 2. In your controller:
-```ruby
-def index
- @users = UserSorting.sort(User, params[:sort]).page(params[:page])
-end
-```
-Possible values of `sort` param: `'id_asc', 'created_at_desc', 'relation.column_asc', 'named_order_asc'`
+   
+    ```ruby
+    def index
+     @users = UserSorting.sort(User, params[:sort]).page(params[:page])
+    end
+    ```
+    Possible values of `sort` param: `'id_asc', 'created_at_desc', 'relation.column_asc', 'named_order_asc'`
 
 You can also define basic sorting class if you don't want to create it for each model:
 
