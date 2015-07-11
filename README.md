@@ -65,6 +65,21 @@ Sorting.sort(User, params[:sort])
 
 ```
 
+If you still want to access sort from your model just do the following:
+
+```ruby
+class User < ActiveRecord::Base
+   def self.sort(order)
+     UserSorting.sort(self, order)
+   end
+end
+
+# Usage
+
+User.sort(params[:sort])
+
+```
+
 ## Contributing
 
 1. Fork it
