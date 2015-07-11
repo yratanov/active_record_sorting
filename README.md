@@ -1,4 +1,4 @@
-# ActiveRecordSorting
+# ActiveRecordSorting ![Build Status](https://travis-ci.org/yratanov/active_record_sorting.svg)
 
 Simple gem to sort your records keeping model clean
 
