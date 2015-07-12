@@ -39,11 +39,12 @@ But if you care about you code being clean and follow single responsibility prin
 2. In your controller:
    
     ```ruby
-    def index
-     @users = UserSorting.sort(User, params[:sort]).page(params[:page])
-    end
+   UserSorting.sort(user_scope, 'id_asc').another_scope 
+   UserSorting.sort(user_scope, 'created_at_desc')
+   UserSorting.sort(user_scope, 'relation.column_asc')
+   UserSorting.sort(user_scope, 'full_name_asc')
+   UserSorting.sort(user_scope, 'any_column_desc')
     ```
-    Example values of `sort` param: `'id_asc', 'created_at_desc', 'relation.column_asc', 'named_order_asc', 'column_desc'`, etc.
 
 You can also define basic sorting class if you don't want to create it for each model:
 
