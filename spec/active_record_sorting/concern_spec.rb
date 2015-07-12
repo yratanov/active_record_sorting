@@ -21,6 +21,15 @@ describe ActiveRecordSorting::Concern do
     end
   end
 
+  context 'use scopes' do
+    subject { Group.where(name: 'Lorem') }
+    let(:sorting_class) { ActiveRecordSorting::Base }
+
+    it 'should delegate sorting to base sorting class' do
+      expected_to_sort_with 'name_asc', sorting_class
+    end
+  end
+
   private
 
   def expected_to_sort_with(order, sorting_class)

@@ -6,8 +6,8 @@ module ActiveRecordSorting
 
     included do
       def self.sort(order)
-        klass = "#{self.name}Sorting".constantize rescue ActiveRecordSorting::Base
-        klass.new(self).sort(order)
+        klass = "#{self}Sorting".constantize rescue ActiveRecordSorting::Base
+        klass.new(where(nil)).sort(order)
       end
     end
   end
