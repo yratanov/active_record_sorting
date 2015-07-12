@@ -74,7 +74,7 @@ User.sort(params[:sort])
 
 ```
 
-It will instantiate `UserSorting` if it is present, base sorting class otherwise.
+It will instantiate `UserSorting` if it is present or `ActiveRecordSorting::Base` class otherwise.
 
 ## Contributing
 
