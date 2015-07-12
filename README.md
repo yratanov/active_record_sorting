@@ -28,7 +28,6 @@ But if you care about you code being clean and follow single responsibility prin
 1. Create sorting class:
     ```ruby
     # app/sortings
-    require 'active_record_sorting/base'
      
     class UserSorting < ActiveRecordSorting::Base
       named_sorting_orders :full_name
@@ -52,8 +51,6 @@ You can also define basic sorting class if you don't want to create it for each 
 ```ruby
 # app/sorting/sorting
 
-require 'active_record_sorting/base'
- 
 class Sorting < ActiveRecordSorting::Base
 end
 ```

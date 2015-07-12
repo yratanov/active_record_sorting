@@ -1,5 +1,4 @@
 require 'spec_helper'
-require 'active_record_sorting/base'
 
 describe ActiveRecordSorting::Base do
   context '.named_sorting_orders' do
