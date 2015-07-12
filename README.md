@@ -65,9 +65,7 @@ If you still want to access sort from your model just do the following:
 
 ```ruby
 class User < ActiveRecord::Base
-   def self.sort(order)
-     UserSorting.sort(self, order)
-   end
+  include ActiveRecordSorting::Concern
 end
 
 # Usage
@@ -75,6 +73,8 @@ end
 User.sort(params[:sort])
 
 ```
+
+It will instantiate `UserSorting` if it is present, base sorting class otherwise.
 
 ## Contributing
 
